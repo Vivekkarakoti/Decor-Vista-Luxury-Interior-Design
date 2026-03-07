@@ -4,7 +4,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: "/DecorVista/",
+  base: "/Decor-Vista-Luxury-Interior-Design/",
 
   plugins: [react(), tailwindcss()],
 
