@@ -21,13 +21,15 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="bg-card p-10 rounded-3xl border border-glass-border shadow-2xl shadow-glass-shadow"
           >
-            <form className="space-y-6">
+            <form action="https://formly.email/submit" method="POST" className="space-y-6">
+              <input type="hidden" name="access_key" value="5b8dc74442cf45c29dd5db8d7438a72f" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <label htmlFor="name" className="block text-xs font-bold tracking-widest text-text-muted uppercase mb-2">Full Name</label>
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     className="w-full bg-transparent border-0 border-b border-glass-border-hover px-0 py-3 text-text-primary focus:outline-none focus:border-accent focus:ring-0 transition-all placeholder-text-muted/30"
                     placeholder="John Doe"
                     required
@@ -38,6 +40,7 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     className="w-full bg-transparent border-0 border-b border-glass-border-hover px-0 py-3 text-text-primary focus:outline-none focus:border-accent focus:ring-0 transition-all placeholder-text-muted/30"
                     placeholder="john@example.com"
                     required
@@ -49,6 +52,7 @@ export default function Contact() {
                 <input
                   type="tel"
                   id="phone"
+                  name="phone"
                   className="w-full bg-transparent border-0 border-b border-glass-border-hover px-0 py-3 text-text-primary focus:outline-none focus:border-accent focus:ring-0 transition-all placeholder-text-muted/30"
                   placeholder="+1 (555) 000-0000"
                 />
@@ -57,6 +61,7 @@ export default function Contact() {
                 <label htmlFor="message" className="block text-xs font-bold tracking-widest text-text-muted uppercase mb-2">Project Details</label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={4}
                   className="w-full bg-transparent border-0 border-b border-glass-border-hover px-0 py-3 text-text-primary focus:outline-none focus:border-accent focus:ring-0 transition-all resize-none placeholder-text-muted/30"
                   placeholder="Tell us about your project..."
