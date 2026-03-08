@@ -12,7 +12,7 @@ export default function LeadPopup() {
         if (!hasSeenPopup) {
             const timer = setTimeout(() => {
                 setIsOpen(true);
-            }, 10000); // 10 seconds
+            }, 3000); // 3 seconds
 
             return () => clearTimeout(timer);
         }
@@ -26,7 +26,7 @@ export default function LeadPopup() {
     return (
         <AnimatePresence>
             {isOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/80 backdrop-blur-sm">
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/5 backdrop-blur-sm">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
