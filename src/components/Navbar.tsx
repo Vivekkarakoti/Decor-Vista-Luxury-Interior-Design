@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
@@ -27,24 +27,21 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-primary/80 backdrop-blur-xl py-4 border-b border-glass-border shadow-2xl shadow-glass-shadow' : 'bg-transparent py-6'
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-primary/80 backdrop-blur-xl py-4 border-b border-glass-border shadow-2xl shadow-glass-shadow' : 'bg-transparent py-6'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         <Link to="/" className="text-xl font-bold tracking-tighter text-text-primary">
           DECOR<span className="text-accent">VISTA</span>
         </Link>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
-              className={`text-xs font-medium transition-colors uppercase tracking-wider ${
-                location.pathname === link.href ? 'text-accent' : 'text-text-muted hover:text-accent'
-              }`}
+              className={`text-xs font-medium transition-colors uppercase tracking-wider ${location.pathname === link.href ? 'text-accent' : 'text-text-muted hover:text-accent'
+                }`}
             >
               {link.name}
             </Link>
@@ -58,7 +55,6 @@ export default function Navbar() {
           <ThemeToggle />
         </div>
 
-        {/* Mobile Menu Toggle */}
         <div className="flex items-center space-x-4 md:hidden">
           <ThemeToggle />
           <button
@@ -70,7 +66,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -85,9 +80,8 @@ export default function Navbar() {
                   key={link.name}
                   to={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-sm font-medium transition-colors uppercase tracking-wider ${
-                    location.pathname === link.href ? 'text-accent' : 'text-text-muted hover:text-accent'
-                  }`}
+                  className={`text-sm font-medium transition-colors uppercase tracking-wider ${location.pathname === link.href ? 'text-accent' : 'text-text-muted hover:text-accent'
+                    }`}
                 >
                   {link.name}
                 </Link>

@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -8,13 +8,15 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2574&auto=format&fit=crop"
           alt="Luxury Interior Design"
           className="w-full h-full object-cover opacity-40"
-          referrerPolicy="no-referrer"
+          onError={(e) => {
+            console.error('Hero image failed to load');
+            e.currentTarget.style.display = 'none';
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/80 to-primary"></div>
       </div>

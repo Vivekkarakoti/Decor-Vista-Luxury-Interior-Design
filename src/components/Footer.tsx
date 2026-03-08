@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Twitter, Linkedin, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { servicesData } from '../data/servicesData';
 
 export default function Footer() {
   return (
@@ -42,12 +43,14 @@ export default function Footer() {
 
           <div>
             <h4 className="text-base font-semibold text-text-primary mb-6">Services</h4>
-            <ul className="space-y-4 text-sm">
-              <li><Link to="/services" className="text-text-muted hover:text-accent transition-colors">Modular Kitchens</Link></li>
-              <li><Link to="/services" className="text-text-muted hover:text-accent transition-colors">Wardrobe Design</Link></li>
-              <li><Link to="/services" className="text-text-muted hover:text-accent transition-colors">Living Room Interiors</Link></li>
-              <li><Link to="/services" className="text-text-muted hover:text-accent transition-colors">Bedroom Interiors</Link></li>
-              <li><Link to="/services" className="text-text-muted hover:text-accent transition-colors">Office Spaces</Link></li>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-sm">
+              {servicesData.map((service) => (
+                <li key={service.id}>
+                  <Link to={`/services/${service.id}`} className="text-text-muted hover:text-accent transition-colors">
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

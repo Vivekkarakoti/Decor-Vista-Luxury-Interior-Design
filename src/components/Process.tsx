@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { MessageSquare, PenTool, Layers, Hammer, CheckCircle } from 'lucide-react';
 
 const steps = [

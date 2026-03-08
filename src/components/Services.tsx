@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
@@ -33,21 +33,17 @@ export default function Services({ limit }: ServicesProps) {
                   transition={{ delay: (index % 4) * 0.1, duration: 0.5 }}
                   className="relative overflow-hidden rounded-2xl group h-[400px] shadow-lg shadow-glass-shadow"
                 >
-                  {/* Background Image */}
                   <img
                     src={service.image}
                     alt={service.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://via.placeholder.com/400x600?text=Image+Not+Found';
+                    }}
                   />
-                  
-                  {/* Dark Overlay - darkens and blurs on hover */}
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/80 transition-all duration-500 backdrop-blur-[2px] group-hover:backdrop-blur-md"></div>
 
-                  {/* Content Container */}
                   <div className="absolute inset-0 p-8 flex flex-col items-center justify-center text-center">
-                    
-                    {/* Centered Title & Icon (Moves up on hover) */}
                     <div className="transform transition-transform duration-500 group-hover:-translate-y-12 flex flex-col items-center">
                       <div className="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center mb-6 group-hover:border-accent/50 group-hover:bg-accent/10 transition-all duration-500">
                         <Icon className="w-8 h-8 text-white group-hover:text-accent transition-colors duration-500" />
@@ -57,7 +53,6 @@ export default function Services({ limit }: ServicesProps) {
                       </h4>
                     </div>
 
-                    {/* Hidden Description & CTA (Fades in from bottom) */}
                     <div className="absolute bottom-12 left-8 right-8 opacity-0 group-hover:opacity-100 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500 flex flex-col items-center">
                       <p className="text-white/80 text-sm leading-relaxed line-clamp-3 mb-6">
                         {service.description}
@@ -67,7 +62,6 @@ export default function Services({ limit }: ServicesProps) {
                         <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-300" />
                       </span>
                     </div>
-
                   </div>
                 </motion.div>
               </Link>

@@ -1,9 +1,4 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -19,7 +14,7 @@ import ServiceDetailsPage from './pages/ServiceDetailsPage';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/Decor-Vista-Luxury-Interior-Design">
       <ScrollToTop />
       <div className="min-h-screen bg-primary text-text-primary font-sans flex flex-col">
         <Navbar />

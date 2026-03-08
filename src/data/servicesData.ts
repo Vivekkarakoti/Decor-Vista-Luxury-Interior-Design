@@ -1,4 +1,8 @@
-import { ChefHat, Home, BedDouble, Baby, Grid, Coffee, Star, Maximize, Briefcase, Bath, Sun, Layout, LayoutGrid, LayoutDashboard, Hammer, Paintbrush } from 'lucide-react';
+import {
+  ChefHat, Home, BedDouble, Baby, Grid, Coffee, Star,
+  Maximize, Briefcase, Bath, Sun, Layout, LayoutGrid,
+  LayoutDashboard, Hammer, Paintbrush
+} from 'lucide-react';
 
 export const servicesData = [
   {
@@ -210,3 +214,5 @@ export const servicesData = [
     ]
   }
 ];
+
+export default servicesData;

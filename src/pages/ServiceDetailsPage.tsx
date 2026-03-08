@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
-import { servicesData } from '../data/servicesData';
+import { servicesData } from '../data/servicesData';  // Fixed import path
 import CTA from '../components/CTA';
 
 export default function ServiceDetailsPage() {
@@ -35,7 +35,7 @@ export default function ServiceDetailsPage() {
           />
           <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
         </div>
-        
+
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ export default function ServiceDetailsPage() {
             <p className="text-text-muted leading-relaxed mb-8">
               At Decor Vista, we believe that every space should reflect the personality and lifestyle of its inhabitants. Our {service.title.toLowerCase()} are crafted with meticulous attention to detail, combining premium materials with innovative design concepts to create spaces that are both beautiful and highly functional.
             </p>
-            
+
             <div className="space-y-4">
               {service.features.map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3">
